@@ -5,11 +5,6 @@ import Services from '../Services/Services';
 console.log(items);
 
 const Home = () => {
-    const style = {
-        display: 'flex',
-        margin: '40px',
-        justifyContent: 'space-between'
-    };
     const bgStyle = { backgroundImage: `url(${backgroundImage})`, height: '100vh', backgroundRepeat: 'no-repeat', backgroundSize: '100% 750px' };
 
     return (

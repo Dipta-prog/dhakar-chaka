@@ -24,8 +24,8 @@ const Login = () => {
     firebase.auth()
       .signInWithPopup(provider)
       .then((result) => {
-        var credential = result.credential;
-        var token = credential.accessToken;
+        // var credential = result.credential;
+        // var token = credential.accessToken;
         var { displayName, email, photoURL } = result.user;
         const signedInUser = { name: displayName, email: email, photoURL: photoURL };
         signedInUser.isSignedIn = true;
@@ -33,16 +33,16 @@ const Login = () => {
         history.replace(from);
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        var email = error.email;
-        var credential = error.credential;
+        // var errorCode = error.code;
+        // var errorMessage = error.message;
+        // var email = error.email;
+        // var credential = error.credential;
 
       });
   }
 
-  const storeAuthToken = () => {
-  }
+  // const storeAuthToken = () => {
+  // }
 
   const handleBlur = (event) => {
     let isFieldValid;
@@ -87,7 +87,7 @@ const Login = () => {
       firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
         .then((userCredential) => {
           // Signed in 
-          var user = userCredential.user;
+          // var user = userCredential.user;
           const newUserInfo = { ...loggedInUser };
           newUserInfo.error = '';
           newUserInfo.success = true;
@@ -108,7 +108,7 @@ const Login = () => {
       firebase.auth().signInWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
+          // const user = userCredential.user;
           const newUserInfo = { ...loggedInUser };
           newUserInfo.error = '';
           newUserInfo.success = true;

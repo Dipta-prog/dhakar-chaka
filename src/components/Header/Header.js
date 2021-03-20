@@ -10,7 +10,7 @@ import { UserContext } from '../../App';
 
 
 const Header = (props) => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
     console.log('from header user name',loggedInUser.name);
     let { transport } = useParams();
     transport = transport || 'Bike';

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, {  useState } from 'react';
 import { useParams } from 'react-router';
 // import items from '../Home/Home.js';
 // import { Map, GoogleApiWrapper } from 'google-maps-react';
@@ -57,6 +57,7 @@ const Book = () => {
 
                                     );
                                 }
+                                
                             })
                         }
 
@@ -84,19 +85,6 @@ const Book = () => {
 
                 {/* map */}
                 <div className="col-md-8">
-                    {/* <div className="card mb-3 card-vertical" style={{maxWidth: '540px'}}>
-                    <div className="row g-0">
-                        <div className="col-md-4 d-flex justify-content-center align-items-center">
-                            <img className="img-adj" src="https://en.wikipedia.org/wiki/Flag_of_Bangladesh#/media/File:Flag_of_Bangladesh.svg" alt="..." />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">Free Exchanges</h5>
-                                <p className="card-text">One of the many reasons you can shop with peace of mind.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
                     <img src={map} style={{ width: '100%' }} alt="" />
                 </div>
             </div>
