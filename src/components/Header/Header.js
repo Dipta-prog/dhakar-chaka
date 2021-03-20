@@ -1,15 +1,10 @@
-// import React from 'react';
 import React from 'react';
-// import { Link, Router } from 'react-router-dom';
 import {
     BrowserRouter as Router,
     Link,
     useParams
 } from "react-router-dom";
 import './Header.css';
-
-import header from '../../images/header.png';
-import logo from '../../images/icons/logo.png';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
 

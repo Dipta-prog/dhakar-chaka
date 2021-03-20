@@ -6,7 +6,6 @@ import { useContext } from 'react';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 import { useState } from 'react';
-// import './Login.css';
 
 const Login = () => {
   const [password, setPassword] = useState('');
@@ -16,12 +15,6 @@ const Login = () => {
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
-  // firebase.initializeApp(firebaseConfig);
-  // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  // const history = useHistory();
-  // const location = useLocation();
-  // const { from } = location.state || { from: { pathname: "/" } };
-
   if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
   }
@@ -33,20 +26,13 @@ const Login = () => {
       .then((result) => {
         var credential = result.credential;
         var token = credential.accessToken;
-        // var user = result.user;
         var { displayName, email, photoURL } = result.user;
         const signedInUser = { name: displayName, email: email, photoURL: photoURL };
         signedInUser.isSignedIn = true;
         setLoggedInUser(signedInUser);
         history.replace(from);
-
-        // hvuvuvtycytcytcchytcd
-        // newUserInfo.name = userCredential.user.displayName;
-        /* header condition*/
-        // newUserInfo.isSignedIn = true;
-        // console.log('sign in with email & pass', userCredential.user.displayName);
-        // setLoggedInUser(newUserInfo);
-      }).catch((error) => {
+      })
+      .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
         var email = error.email;
@@ -60,7 +46,6 @@ const Login = () => {
 
   const handleBlur = (event) => {
     let isFieldValid;
-    // console.log(event.target.value);
     if (event.target.name === 'email') {
       isFieldValid = /\S+@\S+\.\S+/.test(event.target.value);
     }
@@ -77,16 +62,6 @@ const Login = () => {
       }
       // = password
     }
-
-    // console.log(password, confirmPassword);
-    // if (password === confirmPassword && password.length > 0 && confirmPassword.length > 0) {
-    //   isFieldValid = true;
-    //   console.log('password matched', password, confirmPassword);
-    // }
-    // else {
-    //   isFieldValid = false;
-    //   console.log('password not matched', password, confirmPassword);
-    // }
 
     if (event.target.name === 'password') {
       const isPasswordValid = event.target.value.length > 6;
@@ -107,7 +82,6 @@ const Login = () => {
 
   // email sign up firebase
   const handleEmailSignIn = (event) => {
-    // console.log(loggedInUser.email, loggedInUser.password)
     if (!newUser && loggedInUser.email && loggedInUser.password && password === confirmPassword && password.length > 0 && confirmPassword.length > 0) {
       console.log('submitting');
       firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
@@ -122,9 +96,6 @@ const Login = () => {
           history.replace(from);
         })
         .catch((error) => {
-          // var errorCode = error.code;
-          // var errorMessage = error.message;
-          // console.log(errorCode, errorMessage);
           const newUserInfo = { ...loggedInUser };
           newUserInfo.success = false;
           newUserInfo.error = error.message;
@@ -174,11 +145,6 @@ const Login = () => {
 
   return (
     <div>
-      {/* <h1>This is Login</h1>
-      <h1>Email: {loggedInUser.email}</h1>
-      <h1>Password: {loggedInUser.password}</h1>
-      <button onClick={handleGoogleSignIn}>Google Sign in</button> */}
-
       {/* sign in form */}
       {newUser && <div className="card col-md-3 container">
         <form onSubmit={handleEmailSignIn}>
@@ -268,7 +234,7 @@ const Login = () => {
         <div className="pb-2">
           <div className=" d-flex align-items-center">
             <button type="submit" onClick={handleGoogleSignIn} className="btn btn-block" style={{ border: '1px solid black', borderRadius: '25px' }}>
-              <img width="40px" style={{ marginBottom: '3px' }} alt="Google sign-in" src="https://logotyp.us/file/facebook.svg"/>
+              <img width="40px" style={{ marginBottom: '3px' }} alt="Google sign-in" src="https://logotyp.us/file/facebook.svg" />
               Continue with Facebook
             </button>
           </div>

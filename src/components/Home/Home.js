@@ -1,7 +1,6 @@
 import React from 'react';
 import backgroundImage from '../../images/Bg.png';
 import items from '../Fakedata/Fakedata.js'
-
 import Services from '../Services/Services';
 console.log(items);
 
@@ -11,7 +10,7 @@ const Home = () => {
         margin: '40px',
         justifyContent: 'space-between'
     };
-    const bgStyle = { backgroundImage: `url(${backgroundImage})`, height: '100vh', backgroundRepeat: 'no-repeat', backgroundSize: '100% 750px'};
+    const bgStyle = { backgroundImage: `url(${backgroundImage})`, height: '100vh', backgroundRepeat: 'no-repeat', backgroundSize: '100% 750px' };
 
     return (
         <div style={bgStyle} className="d-flex align-items-center">
@@ -21,7 +20,7 @@ const Home = () => {
                         items.map(item => {
                             return (
                                 <div class="col-md-3">
-                                 <Services key={item.transport} item={item}></Services>
+                                    <Services key={item.transport} item={item}></Services>
                                 </div>
                             )
                         })
