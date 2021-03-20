@@ -35,6 +35,9 @@ function App() {
       <Router>
         <Header name={loggedInUser.name} ></Header>
         <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
           <Route path="/home">
             <Home></Home>
           </Route>
@@ -44,9 +47,6 @@ function App() {
           <PrivateRoute path="/book/:transport">
             <Book></Book>
           </PrivateRoute>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
           <Route path="*">
             <NoMatch />
           </Route>

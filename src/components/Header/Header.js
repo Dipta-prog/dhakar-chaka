@@ -18,7 +18,7 @@ const Header = (props) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     console.log('from header user name',loggedInUser.name);
     let { transport } = useParams();
-    transport = transport || 'Bike'
+    transport = transport || 'Bike';
     console.log(transport)
     return (
         <div className="container">

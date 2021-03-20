@@ -119,7 +119,7 @@ const Login = () => {
           newUserInfo.success = true;
           setLoggedInUser(newUserInfo);
           updateUserInformation(loggedInUser.name);
-          // ...
+          history.replace(from);
         })
         .catch((error) => {
           // var errorCode = error.code;
@@ -145,7 +145,7 @@ const Login = () => {
           newUserInfo.isSignedIn = true;
           console.log('sign in with email & pass', userCredential.user.displayName);
           setLoggedInUser(newUserInfo);
-          // ...
+          history.replace(from);
         })
         .catch((error) => {
           // var errorCode = error.code;
