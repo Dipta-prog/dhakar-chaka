@@ -212,6 +212,7 @@ const Login = () => {
             <input type="email" required className="form-control" name="email" onBlur={handleBlur} placeholder="Enter email" />
           </div>
 
+
           <div className="form-group">
             <label>Password</label>
             <input type="password" required className="form-control" name="password" onBlur={handleBlur} placeholder="Enter password" />

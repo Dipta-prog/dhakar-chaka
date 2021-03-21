@@ -8,6 +8,7 @@ import mapImg from '../../images/Map.png';
 import man from '../../images/peopleicon.png'
 import { useEffect } from 'react';
 import pin from '../../images/Screenshot 2021-03-21 193248.png'
+import Gmap from '../../Gmap/Gmap.js';
 
 
 const Book = () => {
@@ -139,19 +140,9 @@ const Book = () => {
                 {/* map */}
                 <div className="col-md-8">
                     <div>
-                        <img src={mapImg} style={{ width: '100%' }} alt="" />
-
-                        {/* <Map google={this.props.google} zoom={14}>
-
-                            <Marker onClick={this.onMarkerClick}
-                                name={'Current location'} />
-
-                            <InfoWindow onClose={this.onInfoWindowClose}>
-                                <div>
-                                    <h1>{this.state.selectedPlace.name}</h1>
-                                </div>
-                            </InfoWindow>
-                        </Map> */}
+                        {/* <img src={mapImg} style={{ width: '100%' }} alt="" /> */}
+                        <Gmap></Gmap>
+                        
                     </div>
                 </div>
             </div>
@@ -159,8 +150,8 @@ const Book = () => {
     );
 };
 
-// export default Book;
+export default Book;
 
-export default GoogleApiWrapper({
-    apiKey: ("AIzaSyCZQdWZWsNyakL30EbvVherjO4c9HcqFc8")
-})(Book)
+// export default GoogleApiWrapper({
+//     apiKey: ("AIzaSyCZQdWZWsNyakL30EbvVherjO4c9HcqFc8")
+// })(Book)
