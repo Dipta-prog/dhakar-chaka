@@ -20,14 +20,14 @@ const items = [
         transport: 'Bus',
         imgUrl: bus,
         seat: 25,
-        rent: 15
+        rent: 200
 
     },
     {
         transport: 'Train',
         imgUrl: train,
         seat: 100,
-        rent: 20
+        rent: 300
     }
 
 ];

@@ -82,7 +82,7 @@ const Login = () => {
 
   // email sign up firebase
   const handleEmailSignIn = (event) => {
-    if (!newUser && loggedInUser.email && loggedInUser.password && password === confirmPassword && password.length > 0 && confirmPassword.length > 0) {
+    if (!newUser && loggedInUser.email && loggedInUser.password && password === confirmPassword && password.length > 0 && confirmPassword.length > 0 && confirmPassword === password) {
       console.log('submitting');
       firebase.auth().createUserWithEmailAndPassword(loggedInUser.email, loggedInUser.password)
         .then((userCredential) => {
@@ -258,6 +258,7 @@ const Login = () => {
       <div className="col-md-3 container">
         <p style={{ color: 'red' }}>{loggedInUser.error}</p>
         {loggedInUser.success && <p style={{ color: 'green' }}>User {newUser ? 'Logged in' : 'created'} successfully</p>}
+        {(confirmPassword !== password) && <p style={{ color: 'red' }}>Password not matching</p>}
       </div>
     </div>
   );
