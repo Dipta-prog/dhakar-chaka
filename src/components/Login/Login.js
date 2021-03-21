@@ -209,12 +209,12 @@ const Login = () => {
 
           <div className="form-group">
             <label>Email address</label>
-            <input type="email" className="form-control" name="email" onBlur={handleBlur} placeholder="Enter email" />
+            <input type="email" required className="form-control" name="email" onBlur={handleBlur} placeholder="Enter email" />
           </div>
 
           <div className="form-group">
             <label>Password</label>
-            <input type="password" className="form-control" name="password" onBlur={handleBlur} placeholder="Enter password" />
+            <input type="password" required className="form-control" name="password" onBlur={handleBlur} placeholder="Enter password" />
           </div>
 
           <div className="form-group">
