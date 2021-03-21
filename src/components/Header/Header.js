@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
+    // BrowserRouter as Router,
     Link,
     useParams
 } from "react-router-dom";
@@ -9,16 +9,16 @@ import { useContext } from 'react';
 import { UserContext } from '../../App';
 
 
-const Header = (props) => {
+const Header = () => {
     const [loggedInUser] = useContext(UserContext);
-    console.log('from header user name',loggedInUser.name);
+    // console.log('from header user name',loggedInUser.name);
     let { transport } = useParams();
     transport = transport || 'Bike';
-    console.log(transport)
+    // console.log(transport)
     return (
         <div className="container">
             <nav className="navbar sticky-top navbar-expand-lg navbar-light">
-                <Link className="navbar-brand" to='/home'>Urban Raiders</Link>
+                <Link style={{fontWeight: '800',fontSize:'25px'}} className="navbar-brand" to='/home'>Urban Raiders</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

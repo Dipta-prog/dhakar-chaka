@@ -258,7 +258,6 @@ const Login = () => {
       <div className="col-md-3 container">
         <p style={{ color: 'red' }}>{loggedInUser.error}</p>
         {loggedInUser.success && <p style={{ color: 'green' }}>User {newUser ? 'Logged in' : 'created'} successfully</p>}
-        {console.log(newUser)}
       </div>
     </div>
   );

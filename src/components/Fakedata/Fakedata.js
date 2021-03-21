@@ -1,23 +1,33 @@
-import bike from '../../images/Bike.png';
-import car from '../../images/Car.png';
-import bus from '../../images/Bus.png';
-import train from '../../images/Train.png';
+import bike from '../../images/bikeResize.jpg';
+import car from '../../images/carResize.jpg';
+import bus from '../../images/busResize.png';
+import train from '../../images/trainResize.jpg';
+
 const items = [
     {
         transport: 'Bike',
-        imgUrl: bike
+        imgUrl: bike,
+        seat: 1,
+        rent: 20
     },
     {
         transport: 'Car',
-        imgUrl: car
+        imgUrl: car,
+        seat: 4,
+        rent: 67
     },
     {
         transport: 'Bus',
-        imgUrl: bus
+        imgUrl: bus,
+        seat: 25,
+        rent: 15
+
     },
     {
         transport: 'Train',
-        imgUrl: train
+        imgUrl: train,
+        seat: 100,
+        rent: 20
     }
 
 ];
